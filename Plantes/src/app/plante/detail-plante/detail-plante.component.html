@@ -1,0 +1,45 @@
+<div *ngIf="plante" class="row">
+	<div class="col s12 m8 offset-m2">
+		<h2 class="header center">{{plante.name}}</h2>
+		<div class="card horizontal hoverable">
+			<div class="card-image">
+				<img [src]="plante.picture"/>
+			</div>
+			<div class="card-stacked">
+				<div class="card-content">
+					<table class="bordered striped">
+						<tbody>
+							<tr>
+								<td>Nom</td>
+								<td>{{plante.name}}</td>
+							</tr>
+							<tr>
+								<td>Ensoleillement</td>
+								<td>{{plante.exposition}}</td>
+							</tr>
+							<tr>
+								<td>Types</td>
+								<td><span *ngFor="let type of plante.types" class="{{type | planteTypeColor}}">{{type}}</span></td>
+							</tr>
+							<tr>
+								<td>Date de creation</td>
+								<td>{{plante.created | date}}</td>
+							</tr>
+						</tbody>
+
+					</table>
+
+				</div>
+				<div class="card-action">
+					<a (click)="goToPlanteList()">Retour</a>
+					<a (click)="goToEditPlante(plante)">Editer</a>
+					<a (click)="deletePlanteById(plante)">Supprimer</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+<h4 *ngIf="!plante" class="center">Aucune plante a afficher</h4>
