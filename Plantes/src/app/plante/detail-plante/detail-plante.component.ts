@@ -8,20 +8,20 @@ import { PlanteService } from '../plante.service';
   templateUrl: './detail-plante.component.html',
   styleUrls: ['./detail-plante.component.css'],
 })
-export class DetailPlanteComponent implements OnInit{
+export class DetailPlanteComponent implements OnInit {
   planteList: Plante[];
   plante: Plante | undefined;
-  constructor(private route: ActivatedRoute, private router: Router, private planteService: PlanteService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private planteService: PlanteService) { }
 
   ngOnInit() {
     const planteId: string | null = this.route.snapshot.paramMap.get('id');
     if (planteId) {
-      this.planteService.getPlanteById(+planteId).subscribe(plante=>this.plante = plante);
+      this.planteService.getPlanteById(+planteId).subscribe(plante => this.plante = plante);
     }
   }
 
-  deletePlanteById(plante: Plante){
-    this.planteService.deletePlante(plante.id).subscribe(()=>this.goToPlanteList()
+  deletePlanteById(plante: Plante) {
+    this.planteService.deletePlante(plante.id).subscribe(() => this.goToPlanteList()
     )
   }
 
@@ -29,7 +29,7 @@ export class DetailPlanteComponent implements OnInit{
     this.router.navigate(['/plantes']);
   }
 
-  goToEditPlante(plante : Plante){
-this.router.navigate(['/edit/plante', plante.id]);
+  goToEditPlante(plante: Plante) {
+    this.router.navigate(['/edit/plante', plante.id]);
   }
 }

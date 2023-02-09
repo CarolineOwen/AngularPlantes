@@ -1,0 +1,12 @@
+.italic{
+    font-style: italic;
+}
+
+.gras{
+    font-weight: bold;
+}
+
+.imageTaille{
+	object-fit: cover;
+	max-height: 170px;
+}

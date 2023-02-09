@@ -1,9 +1,8 @@
-export class Plante{
-
+export class Plante {
 	id: number;
-	name:string;
-	created:Date;
+	name: string;
+	date: Date = new Date();
 	exposition: string;
-	picture:string;
-	types: Array<string>;
+	picture: string;
+	description: string;
 }

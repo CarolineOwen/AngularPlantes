@@ -8,10 +8,10 @@ import { Plante } from '../plante';
 })
 export class AddPlanteComponent implements OnInit {
 
-plante : Plante;
+  plante: Plante;
 
-ngOnInit(){
-this.plante = new Plante;
-}
+  ngOnInit() {
+    this.plante = new Plante;
+  }
 
 }

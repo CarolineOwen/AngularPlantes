@@ -17,30 +17,19 @@
 				<!-- Plante picture -->
 				<div *ngIf="isAddForm" class="form-group">
 					<label for="picture">Image</label>
-					<input type="text" class="form-control" id="picture" required
-						[(ngModel)]="plante.picture" name="picture" #picture="ngModel">
-
+					<input type="text" class="form-control" id="picture" required [(ngModel)]="plante.picture"
+						name="picture" #picture="ngModel">
 					<div [hidden]="picture.valid || picture.pristine" class="card-panel red accent-1">
 						L'image est requise.
 					</div>
 				</div>
 
-				<!-- Plante types -->
-				<form class="form-group">
-					<label for="types">Types</label>
-					<p *ngFor="let type of types">
-						<label>
-							<input type="checkbox" class="filled-in" id="{{ type }}" [value]="type"
-								[checked]="hasType(type)" [disabled]="!isTypesValid(type)"
-								(change)="selectType($event, type)" />
-							<span [attr.for]="type">
-								<div class="{{ type | planteTypeColor }}">
-									{{ type }}
-								</div>
-							</span>
-						</label>
-					</p>
-				</form>
+				<!-- Plante description -->
+				<div class="form-group">
+					<label for="description">Description</label>
+					<input type="text" class="form-control" id="description" required [(ngModel)]="plante.description"
+						name="description" #description="ngModel">
+				</div>
 
 				<!-- Submit button -->
 				<div class="divider"></div>

@@ -3,7 +3,7 @@
 		<h2 class="header center">{{plante.name}}</h2>
 		<div class="card horizontal hoverable">
 			<div class="card-image">
-				<img [src]="plante.picture"/>
+				<img [src]="plante.picture" />
 			</div>
 			<div class="card-stacked">
 				<div class="card-content">
@@ -14,16 +14,13 @@
 								<td>{{plante.name}}</td>
 							</tr>
 							<tr>
-								<td>Ensoleillement</td>
-								<td>{{plante.exposition}}</td>
+								<td>Description</td>
+								<td>{{plante.description}}</td>
 							</tr>
-							<tr>
-								<td>Types</td>
-								<td><span *ngFor="let type of plante.types" class="{{type | planteTypeColor}}">{{type}}</span></td>
-							</tr>
+
 							<tr>
 								<td>Date de creation</td>
-								<td>{{plante.created | date}}</td>
+								<td>{{plante.date | date}}</td>
 							</tr>
 						</tbody>
 

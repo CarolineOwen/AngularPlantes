@@ -1,5 +1,5 @@
 <h2 class="center">Editer {{plante?.name}}</h2>
-<p *ngIf="plante" class="center">
-<img [src]="plante.picture">
+<p  *ngIf="plante" class="center">
+<img class="imageTaille" [src]="plante.picture">
 </p>
 <app-plante-form *ngIf="plante" [plante]="plante"></app-plante-form>
