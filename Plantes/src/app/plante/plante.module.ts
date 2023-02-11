@@ -1,3 +1,5 @@
+//module qui gère la gestion des plantes
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListPlanteComponent } from './list-plante/list-plante.component';
@@ -11,6 +13,8 @@ import { EditPlanteComponent } from './edit-plante/edit-plante.component';
 import { AddPlanteComponent } from './add-plante/add-plante.component';
 import { SearchPlanteComponent } from './search-plante/search-plante.component';
 
+
+//Routes liées aux plantes en fonctions des actions
 const planteRoutes: Routes = [
   { path: 'edit/plante/:id', component: EditPlanteComponent },
   { path: 'plante/add', component: AddPlanteComponent },
@@ -19,6 +23,7 @@ const planteRoutes: Routes = [
 ];
 
 @NgModule({
+  //importations des composants liées aux plantes
   declarations: [
     ListPlanteComponent,
     DetailPlanteComponent,
@@ -29,10 +34,14 @@ const planteRoutes: Routes = [
     SearchPlanteComponent
   ],
   imports: [
+    //commonModule comprendre les directives structurelles ngIf et ngFor par exemple
     CommonModule,
     FormsModule,
     RouterModule.forChild(planteRoutes)
   ],
+  //les services disponible que pour le module plante
   providers: [PlanteService]
 })
+
+//module des plantes
 export class PlanteModule { }

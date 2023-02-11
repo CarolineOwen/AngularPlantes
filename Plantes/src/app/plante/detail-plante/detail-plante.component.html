@@ -1,3 +1,4 @@
+<!-- si on reçoit bien une plante quand on est redirigé vers détail, on affiche les caractéristiques souhaitées de la plante -->
 <div *ngIf="plante" class="row">
 	<div class="col s12 m8 offset-m2">
 		<h2 class="header center">{{plante.name}}</h2>
@@ -20,7 +21,7 @@
 
 							<tr>
 								<td>Date de creation</td>
-								<td>{{plante.date | date}}</td>
+								<td>{{plante.date | date:"dd/MM/yyyy"}}</td>
 							</tr>
 						</tbody>
 
@@ -39,4 +40,5 @@
 	</div>
 
 </div>
+<!-- Si pas de plante -->
 <h4 *ngIf="!plante" class="center">Aucune plante a afficher</h4>

@@ -1,7 +1,10 @@
 <div class="container">
 	<div class="row">
+		<!-- composant pour permettre la recherche d'une plante -->
 		<app-search-plante></app-search-plante>
+		<!-- affichage avec ngFor de chaque plante de la liste après requete à l'API -->
 		<div *ngFor="let plante of plantesListe" class="col m4 s6">
+			<!-- Si on clique sur une plante on est redirigé vers le détail de la plante -->
 			<div (click)="goToPlante(plante)" class="card horizontal " appBorderCard>
 				<div class="card-image ">
 					<img class="imageTaille" [src]="plante.picture" />
@@ -19,11 +22,13 @@
 	</div>
 </div>
 
+<!-- bouton d'ajout d'une plante qui redirige vers le formulaire d'ajout -->
 <a class="btn-floating btn-large waves-effect waves-light red z-depth-3 "
 	style="position: fixed; bottom:25px; right:25px" routerLink="/plante/add">
 	+
 </a>
 
+<!-- Si il n'y a pas de liste de plantes à afficher ou que chargement trop long le temps de la requete alors apparition d'un loader -->
 <div *ngIf="!plantesListe" class="center">
 	<div class="preloader-wrapper big active">
 		<div class="spinner-layer spinner-blue">

@@ -11,9 +11,12 @@ import { PlanteService } from '../plante.service';
 export class DetailPlanteComponent implements OnInit {
   planteList: Plante[];
   plante: Plante | undefined;
+
+  //appel des services dans le construteur pour pouvoir les utiliser
   constructor(private route: ActivatedRoute, private router: Router, private planteService: PlanteService) { }
 
   ngOnInit() {
+    //récupérer l'id à l'instant 't' dans la route
     const planteId: string | null = this.route.snapshot.paramMap.get('id');
     if (planteId) {
       this.planteService.getPlanteById(+planteId).subscribe(plante => this.plante = plante);
@@ -25,6 +28,7 @@ export class DetailPlanteComponent implements OnInit {
     )
   }
 
+  //redirection vers liste plante
   goToPlanteList() {
     this.router.navigate(['/plantes']);
   }

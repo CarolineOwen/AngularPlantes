@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap } from 'rxjs';
 import { Plante } from './plante';
 
+
+//permet d'injecter le service dans les constructeurs de composants pour l'utiliser
 @Injectable()
 export class PlanteService {
 

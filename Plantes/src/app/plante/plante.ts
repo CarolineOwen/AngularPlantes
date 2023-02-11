@@ -1,3 +1,5 @@
+
+//Modèle de la plante
 export class Plante {
 	id: number;
 	name: string;
